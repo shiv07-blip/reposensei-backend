@@ -22,7 +22,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://reposensei-93e6.vercel.app',  // your Vercel URL
+    'https://reposensei-frontend-oyhl.vercel.app/',  
   ],
   credentials: true
 }));
