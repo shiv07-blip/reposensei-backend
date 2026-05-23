@@ -16,9 +16,7 @@ const personalBrandingRouter = require('./src/routes/personalBrandingRoutes');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-  res.send("RepoSensei Backend Running 🚀");
-});
+
 
 // Middlewaresapi/
 app.use(cors());
@@ -34,6 +32,10 @@ app.use('/api/webhook', webhookRouter);
 app.use('/api/onboarding', onboardingRouter);
 app.use('/generated', express.static(path.join(__dirname, 'docs/generated')));
 app.use('/api/personal-branding', personalBrandingRouter);
+
+app.get("/", (req, res) => {
+  res.send("RepoSensei Backend Running 🚀");
+});
 
 // Start server
 connectDB().then(() => {
